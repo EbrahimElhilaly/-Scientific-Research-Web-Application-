@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 9, 2022 8:42:10 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="javaee.webstore.jdb.testH.Users" table="USERS" schema="HR" optimistic-lock="version">
+        <id name="userId" type="big_decimal">
+            <column name="USER_ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="userName" type="string">
+            <column name="USER_NAME" length="100" />
+        </property>
+        <property name="userEmail" type="string">
+            <column name="USER_EMAIL" length="100" />
+        </property>
+        <property name="userAddress" type="string">
+            <column name="USER_ADDRESS" length="100" />
+        </property>
+        <property name="userGender" type="string">
+            <column name="USER_GENDER" length="1" />
+        </property>
+        <property name="userExpYears" type="big_decimal">
+            <column name="USER_EXP_YEARS" precision="22" scale="0" />
+        </property>
+        <property name="userBirthDate" type="date">
+            <column name="USER_BIRTH_DATE" length="7" />
+        </property>
+        <property name="userHasCar" type="java.lang.Boolean">
+            <column name="USER_HAS_CAR" precision="1" scale="0" />
+        </property>
+        <property name="userCountry" type="string">
+            <column name="USER_COUNTRY" length="500" />
+        </property>
+        <property name="userPassword" type="string">
+            <column name="USER_PASSWORD" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

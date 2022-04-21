@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 9, 2022 8:42:10 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="javaee.webstore.jdb.testH.Products" table="PRODUCTS" schema="HR" optimistic-lock="version">
+        <id name="productId" type="big_decimal">
+            <column name="PRODUCT_ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="productsDetails" class="javaee.webstore.jdb.testH.ProductsDetails" fetch="select">
+            <column name="PRODUCT_DETAIL_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="productName" type="string">
+            <column name="PRODUCT_NAME" length="150" />
+        </property>
+        <set name="softwares" table="SOFTWARE" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PRODUCT_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="javaee.webstore.jdb.testH.Software" />
+        </set>
+    </class>
+</hibernate-mapping>
